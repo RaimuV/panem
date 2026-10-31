@@ -63,7 +63,11 @@ Non saltare la Fase 1: senza universo completo, il report è inutile.
   `data/piatti.csv`, aggiorna `fonti-menu.csv` e `monitoraggio.csv`.
 - `python3 scripts/panem.py refresh` — ricontrolla le fonti note; se l'hash dei
   piatti+prezzi cambia, scrive in `data/changelog.csv`.
+- `python3 scripts/panem.py status` — riepilogo copertura.
+- `python3 scripts/panem.py check` — validazione integrità CSV (FK, id duplicati,
+  contatori `ha_menu_online`/`n_fonti`, campi fuori schema). Exit 1 se qualcosa non torna.
 - `scripts/refresh.sh check|full` — wrapper per cron (lock in `/tmp/panem.lock`).
+  Dopo lo scrape valida con `check` e, se passa, committa e pusha `data/`.
 
 Regole: 1 richiesta/secondo per dominio, robots.txt rispettato, snapshot in `raw/`.
 Just Eat / TheFork / Glovo sono bloccate (Cloudflare/403): si catalogano, non si scrapano.

@@ -108,6 +108,17 @@ Gira **sul server** (`/home/xenoserver/PROJECTS/panem`), non sulla copia di lavo
 
 Log: `raw/refresh.log` (gitignored). Lock: `/tmp/panem.lock`.
 
-⚠️ `refresh.sh` aggiorna `data/` ma **non committa né pusha**: i dati nuovi restano sul
-server finché non si fa commit a mano. Da sistemare (commit+push condizionale in coda
-allo script, dopo aver verificato identità git e chiave di scrittura sul server).
+Lo script, dopo lo scrape: valida i CSV con `panem.py check` (FK, id duplicati,
+contatori, campi fuori schema) e **solo se la validazione passa** committa `data/` e
+pusha su `origin`, così i dati non restano solo sul server. Se `data/` è invariato non
+crea commit; se manca l'identità git logga e salta il commit.
+
+Prerequisiti da verificare **sul server** (una volta sola):
+
+```bash
+git config user.email                     # identità per il commit automatico
+git -C /home/xenoserver/PROJECTS/panem push --dry-run origin HEAD   # credenziali di scrittura
+```
+
+Se il push non è configurato, il commit resta locale e lo script lo segnala in
+`raw/refresh.log` (nessun dato perso, si ritenta al giro successivo).

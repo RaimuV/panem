@@ -20,6 +20,7 @@ python3 scripts/panem.py discover   # cerca i siti propri mancanti
 python3 scripts/panem.py scrape     # scarica fonti, estrae menu e prezzi
 python3 scripts/panem.py refresh    # ricontrolla le fonti note (cambi -> changelog)
 python3 scripts/panem.py status     # copertura
+python3 scripts/panem.py check      # validazione CSV: exit 1 se FK/contatori incoerenti
 ```
 
 ## Struttura
@@ -35,9 +36,9 @@ panem/
 │   ├── monitoraggio.csv # hash/HTTP per il change detection
 │   └── changelog.csv    # fonti cambiate rilevate dal refresh
 ├── scripts/
-│   ├── panem.py             # discover / scrape / refresh / status
+│   ├── panem.py             # discover / scrape / refresh / status / check
 │   ├── harvest_paginegialle.py  # discovery siti da PagineGialle
-│   └── refresh.sh           # wrapper cron (check | full)
+│   └── refresh.sh           # wrapper cron (check | full), valida e pusha i dati
 ├── raw/                 # snapshot HTML/PDF consultati (gitignored)
 └── report.md            # sintesi: copertura, classi, gap, note tecniche
 ```
