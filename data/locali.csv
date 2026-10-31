@@ -6,7 +6,7 @@ panificio-anselmo-maestri,Panificio Anselmo-Maestri Fornai,forno-caffetteria,Via
 panificio-del-lago,Panificio del Lago,forno-caffetteria,Via Matera 28,080 3112888,https://panificiodellago.it/,,si,1,,2026-10-31
 panificio-gusto-e-bonta,Panificio Gusto e Bontà,forno-caffetteria,Corso Umberto I 91,080 4117921,,,no,0,,2026-10-31
 alterego-comfort-food,Alterego Comfort Food,hamburgheria,Via Alberobello 12,371 1955234,,,no,0,Vedi anche Black Pepper Comfort Food (alteregoaltamura.it),2026-10-31
-pizzeria-birbacco,Birbacco Pizzeria Hamburgeria,hamburgheria,Via Caduti delle Foibe 15/17,080 3106980,,,no,0,,2026-10-31
+pizzeria-birbacco,Birbacco Pizzeria Hamburgeria,hamburgheria,Via Caduti delle Foibe 15/17,080 3106980,,just-eat,si,1,,2026-10-31
 ham-hamburgheria,Ham. Hamburgheria,hamburgheria,Via Golgota 86,,,just-eat,si,1,,2026-10-31
 the-grill,The Grill - Specialità Carne & Panini,hamburgheria,,,,just-eat,si,1,Indirizzo da verificare,2026-10-31
 bottega-del-luppolo,Bottega del Luppolo,paninoteca,Via Almirante 113,391 3042396,,,no,0,,2026-10-31
@@ -34,7 +34,7 @@ pizzeria-la-rotonda,La Rotonda,pizzeria,Viale Martiri 1799 145,080 3323946,,,no,
 pizzeria-la-voglia,La Voglia - Pizza e Co.,pizzeria,Via IV Novembre 13,351 9003524,,,no,0,,2026-10-31
 mercadante-pizza-e-cucina,Mercadante Pizza e Cucina,pizzeria,Via Bruxelles 3,080 3116311,,thefork,si,1,TheFork Insider,2026-10-31
 pizzeria-mercatale,Mercatale,pizzeria,Via Teatro Mercadante 48,379 1594559,,,no,0,,2026-10-31
-pizzeria-miura,Miura Pizza Lab,pizzeria,Piazza De Napoli 10,,https://miurapizzalab.it/,,si,1,Solo piattaforme,2026-10-31
+pizzeria-miura,Miura Pizza Lab,pizzeria,Piazza De Napoli 10,,https://miurapizzalab.it/,,si,2,Menu PDF proprio + Just Eat,2026-10-31
 pizzeria-new-bietigheim,New Bietigheim,pizzeria,Via Santeramo 50/A,080 3112659,https://www.bietigheimpizzeria.com,,si,1,,2026-10-31
 pizzeria-nonna-tere,Nonna Tere',pizzeria,Via Lama di Cervo 173,080 3849540,,,no,0,,2026-10-31
 pizzeria-pizero,Pizero,pizzeria,Via Golgota 19,348 7287215,,,no,0,,2026-10-31
@@ -53,7 +53,7 @@ pizzeria-i-5-sensi,Pizzeria I 5 Sensi,pizzeria,Via Cavour 4,080 3113124,,,no,0,,
 pizzeria-il-pizzico,Pizzeria Il Pizzico,pizzeria,Via Castello 1,080 9672296,https://www.pizzeriailpizzico.it,,si,1,"Anche come ""Il Pizzico di Loviglio"", Via Nola 3/A",2026-10-31
 pizzeria-levante,Pizzeria Levante,pizzeria,Via Fiume 4/A,080 3101051,https://www.pizzerialevante.it,,si,4,Due insegne: Via Fiume 4/A e Viale Martiri 1799 94/96 (stesso telefono),2026-10-31
 pizzeria-levante-martiri,Pizzeria Levante (Viale Martiri),pizzeria,Viale Martiri 1799 94/96,080 3101051,https://www.pizzerialevante.it,,si,4,"Secondo punto vendita, vedi pizzeria-levante",2026-10-31
-pizzeria-maninpasta,Pizzeria Maninpasta,pizzeria,Via Monopoli 9,339 4546756,,,no,0,,2026-10-31
+pizzeria-maninpasta,Pizzeria Maninpasta,pizzeria,Via Monopoli 9,339 4546756,,just-eat,si,1,,2026-10-31
 pizzeria-non-mi-dire,Pizzeria Non Mi Dire,pizzeria,Via Lucera 29,,,just-eat,si,1,Solo piattaforme,2026-10-31
 pizzeria-peach-pit,Pizzeria Peach Pit,pizzeria,Via Cilea 14,080 3111111,,,no,0,,2026-10-31
 pizzeria-rosticceria-bietigheim,Pizzeria Rosticceria Bietigheim,pizzeria,Via Vincenzo Russo 15/17,080 3102499,https://www.bietigheimpizzeria.com,,si,1,,2026-10-31
@@ -114,13 +114,14 @@ biancospino,Ristorante Biancospino,ristorante,Via Maestri del Lavoro 5,080 31021
 pizzeria-la-brace,Ristorante Pizzeria La Brace,ristorante,Via Brescia 54,327 4924109,,,no,0,,2026-10-31
 romana-bistrot,Romana Bistrot,ristorante,Via Marecchia 19,080 8839175,https://romanabistrotaltamura.it/,,si,1,,2026-10-31
 rubino-esperienze-di-gusto,Rubino Esperienze di Gusto,ristorante,Via Selva 97,080 9266401,,,no,0,,2026-10-31
-salumeria-boccondivino,Salumeria Boccondivino,ristorante,Via Santeramo 136,333 3226961,,,no,0,"Su Just Eat come ""Salumeria Boccon di Vino""",2026-10-31
+salumeria-boccondivino,Salumeria Boccondivino,ristorante,Via Santeramo 136,333 3226961,,just-eat,si,1,"Su Just Eat come ""Salumeria Boccon di Vino""",2026-10-31
 shibumi,Shibumi Fusion Restaurant,ristorante,,,,just-eat,si,1,"Nuovo su Just Eat, indirizzo da verificare",2026-10-31
 shodai,Shodai Sushi Bar,ristorante,Via Amedeo di Savoia 16,080 2123656,https://www.shodai.it/altamura,,si,1,,2026-10-31
 stile-libero,Stile Libero,ristorante,Via Mura Megalitiche 1,080 3325581,https://stileliberoaltamura.it/,,si,1,,2026-10-31
 sushikom,Sushikom,ristorante,Via Gravina 3,328 8855687,,,no,0,,2026-10-31
 sushitao,Sushitao,ristorante,Via Bari 110,348 0595518,,,no,0,,2026-10-31
 tanamatta,Tanamatta,ristorante,Via Giannuzzi 36,392 3519972,,,no,0,,2026-10-31
+tandem-food,Tandem Food,altro,Via delle Nazioni 15,,,just-eat,si,1,"Categoria da verificare (solo Just Eat, HTTP 403)",2026-10-31
 trattoria-federico-ii,Trattoria Federico II,ristorante,Via Luciani 3,080 3145699,,,no,0,,2026-10-31
 trattoria-cenzino,Trattoria Rosticceria Cenzino,ristorante,Via Sant'Ambrogio 15,080 3117049,http://www.rosticceriacenzino.it,,si,1,,2026-10-31
 tre-archi,Tre Archi Trattoria Pizzeria Take Away,ristorante,Via San Michele 28,080 3115569,https://www.trearchi.it,,si,1,,2026-10-31

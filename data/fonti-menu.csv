@@ -50,7 +50,7 @@ trattoria-cenzino,http://www.rosticceriacenzino.it,sito-proprio,C,no,no,,statico
 tre-archi,https://www.trearchi.it,sito-proprio,D,no,no,,bloccato,HTTP 429,2026-10-31
 villa-di-bacco,https://villadibacco.com,sito-proprio,D,no,no,,statico,nessun menu con prezzi estraibile dalla home,2026-10-31
 sale-e-pepe-take-away,https://www.justeat.it/restaurants-sale-e-pepe-take-away-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
-maninpasta,https://www.justeat.it/restaurants-maninpasta-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+pizzeria-maninpasta,https://www.justeat.it/restaurants-maninpasta-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
 ham-hamburgheria,https://www.justeat.it/restaurants-ham-hamburgheria-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
 sape-pizzeria-takeaway,https://www.justeat.it/restaurants-sape-pizzeria-takeaway-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
 fior-di-pizza,https://www.justeat.it/restaurants-fior-di-pizza-altamura-70022/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
@@ -64,12 +64,12 @@ nagoya,https://www.justeat.it/restaurants-nagoya-ristorante-fusion-altamura/menu
 kebabberia-group,https://www.justeat.it/restaurants-kebabberia-group-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
 umami-pizzeria,https://www.justeat.it/restaurants-umami-pizzeria-altamura-70022/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
 piada-la-piadineria-artigianale,https://www.justeat.it/restaurants-piada-la-piadineria-artigianale-70022/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
-birbacco,https://www.justeat.it/restaurants-birbacco-pizzeria-hamburgeria-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
-miura-pizza-lab,https://www.justeat.it/restaurants-miura-pizza-lab-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+pizzeria-birbacco,https://www.justeat.it/restaurants-birbacco-pizzeria-hamburgeria-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+pizzeria-miura,https://www.justeat.it/restaurants-miura-pizza-lab-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
 sponzami,https://www.justeat.it/restaurants-sponzami-altamura-70022/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
 the-grill,https://www.justeat.it/restaurants-the-grill---specialita-carne-and-panini-70022/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
 shibumi,https://www.justeat.it/restaurants-shibumi-altamura---fusion-restaurant-70022/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
-salumeria-boccon-di-vino,https://www.justeat.it/restaurants-salumeria-boccon-di-vino-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+salumeria-boccondivino,https://www.justeat.it/restaurants-salumeria-boccon-di-vino-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
 bistrot-del-borgo,https://www.justeat.it/restaurants-bistrot-del-borgo-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
 fior-di-pizza,https://www.thefork.it/ristorante/fior-di-pizza-r813416,thefork,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
 pamaro,https://www.thefork.it/ristorante/pamaro-r869167,thefork,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31

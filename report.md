@@ -7,8 +7,8 @@ Aggiornato: 2026-10-31 (Fase 1 chiusa; Fase 2-3 avviate con pipeline automatica)
 | Fase | Stato | Note |
 |---|---|---|
 | 0 — Schema e perimetro | ✅ completata | decisioni in `PLAN.md` |
-| 1 — Universo dei locali | ✅ completata | 128 righe in `locali.csv` |
-| 2 — Discovery fonti menu | 🟡 parziale | 81 fonti censite su 128 locali |
+| 1 — Universo dei locali | ✅ completata | 129 righe in `locali.csv` |
+| 2 — Discovery fonti menu | 🟡 parziale | 81 fonti censite, 58 locali coperti su 129 |
 | 3 — Classificazione e scouting | 🟡 parziale | classi A/B/C/D assegnate, prezzi estratti dove possibile |
 | 4 — Report | 🟡 prima stesura | questo file |
 
@@ -19,15 +19,20 @@ Pipeline riproducibile: `scripts/panem.py` (`discover`, `scrape`, `refresh`, `st
 
 | Metrica | Valore |
 |---|---|
-| Locali censiti | 128 |
+| Locali censiti | 129 |
 | Locali con sito proprio trovato | 38 |
-| Locali con almeno una fonte menu | 59 |
+| Locali con almeno una fonte menu | 58 |
 | Locali con prezzi estratti | 17 |
 | Fonti censite | 81 (36 sito proprio, 14 PDF, 22 Just Eat, 9 TheFork) |
 | Piatti/prezzi estratti | 1.187 |
 
-Per categoria (locali con almeno una fonte): ristoranti 23, pizzerie 21,
-paninoteche 5, hamburgherie 2, panzerotterie 2, forni 1.
+Per categoria (locali con almeno una fonte): ristoranti 24, pizzerie 22,
+paninoteche 5, hamburgherie 3, panzerotterie 2, forni 1, altro 1.
+
+Nota integrità (2026-10-31): corrette 5 FK rotte in `fonti-menu.csv` che puntavano a
+id inesistenti (`birbacco`, `maninpasta`, `miura-pizza-lab`, `salumeria-boccon-di-vino`
+→ id reali; `tandem-food` era un locale mancante, ora aggiunto a `locali.csv`).
+Aggiunto il controllo FK/contatori: `locali.csv` e `piatti.csv` ora sono coerenti.
 
 ## Distribuzione classi di estraibilità
 
@@ -63,7 +68,7 @@ prezzo, data di verifica).
 
 ## Gap — locali senza alcuna fonte censita
 
-69 locali su 128. Sono i candidati commerciali dell'aggregatore (nessuna fonte nota,
+71 locali su 129. Sono i candidati commerciali dell'aggregatore (nessuna fonte nota,
 quindi nessuna concorrenza diretta sul menu online). La maggior parte sono ristoranti
 e pizzerie senza sito proprio e presenti solo su directory.
 
@@ -89,10 +94,12 @@ e pizzerie senza sito proprio e presenti solo su directory.
    ri-scrape completo settimanale (`refresh.sh full`, ~3 min). I cambi finiscono in
    `data/changelog.csv`; `ultima_verifica` e `ultima_modifica` sono per fonte.
 4. **Prossimi passi utili**: (a) passare il browser sulle 10 fonti classe C per capire
-   se il menu è recuperabile; (b) trovare i siti mancanti dei 69 locali scoperti;
+   se il menu è recuperabile; (b) trovare i siti mancanti dei 71 locali scoperti;
    (c) decidere il perimetro prodotto (solo Altamura? menu+prezzi? ordinabilità?).
 
 ## Aggiornamento automatico
+
+Gira **sul server** (`/home/xenoserver/PROJECTS/panem`), non sulla copia di lavoro:
 
 ```
 17 3 * * *   /home/xenoserver/PROJECTS/panem/scripts/refresh.sh check   # hash/HTTP
@@ -100,3 +107,7 @@ e pizzerie senza sito proprio e presenti solo su directory.
 ```
 
 Log: `raw/refresh.log` (gitignored). Lock: `/tmp/panem.lock`.
+
+⚠️ `refresh.sh` aggiorna `data/` ma **non committa né pusha**: i dati nuovi restano sul
+server finché non si fa commit a mano. Da sistemare (commit+push condizionale in coda
+allo script, dopo aver verificato identità git e chiave di scrittura sul server).

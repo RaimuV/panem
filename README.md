@@ -9,8 +9,8 @@ in modo automatico. Il valore non è l'elenco in sé, ma la mappa delle fonti e 
 
 ## Stato
 
-Fase 1 chiusa (128 locali). Fase 2-3 avviate: 81 fonti censite, 17 locali con prezzi
-estratti (1.187 righe in `data/piatti.csv`). Dettaglio e gap in `report.md`.
+Fase 1 chiusa (129 locali). Fase 2-3 avviate: 81 fonti censite su 58 locali, 17 con
+prezzi estratti (1.187 righe in `data/piatti.csv`). Dettaglio e gap in `report.md`.
 
 Aggiornamento automatico (cron): check giornaliero dell'hash dei menu + ri-scrape
 settimanale. Comandi manuali:
