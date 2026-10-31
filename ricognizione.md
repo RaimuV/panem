@@ -146,7 +146,45 @@ Fratelli Pisani, …
 - **Paninoteche e panzerotterie** sono quasi assenti dalle piattaforme: lì l'universo
   va costruito con ricerca diretta (Instagram/web), non con Just Eat.
 
-## 6. Prossimi passi
+## 6. Esito Fase 1 — `data/locali.csv`
+
+Chiusa il 2026-10-31 con **128 righe** (piano: 60-70 attese).
+
+| Categoria | Righe |
+|---|---|
+| ristorante | 59 |
+| pizzeria | 47 |
+| paninoteca | 9 |
+| forno-caffetteria | 4 |
+| hamburgheria | 4 |
+| panzerotteria | 3 |
+| altro (agriturismi) | 2 |
+| **Totale** | **128** |
+
+Metodo:
+
+- universo costruito su PagineBianche (categorie `ristorante`, `pizzeria`,
+  `trattoria`, `osteria`, `pub`, `birreria`, `paninoteca`, `rosticceria`,
+  `panificio`), filtrando `addressLocality = Altamura` e CAP `70022`;
+- incrocio con Just Eat e TheFork per la colonna `piattaforme_delivery`;
+- esclusi bar puri, caffetterie, pasticcerie, panifici senza consumo sul posto,
+  caseifici, enoteche, laboratori;
+- generatore riproducibile: `scripts/build_locali.py`.
+
+Punti aperti da risolvere in Fase 2:
+
+- **doppioni storici**: `pizzeria-ciccio-e-ciabatta` e "480 Gradi Storie di Gusto"
+  condividono indirizzo e telefono; `binario-24` ha due telefoni; `fior-di-pizza`,
+  `pizzeria-levante`, Dambrosio (3 sedi) e `sale-e-pepe` hanno più punti vendita —
+  le righe sono state tenute separate, da confermare con i menu.
+- **locali solo da PagineBianche e senza riscontri** (Clemente, Bolognese, Pugliese,
+  Dafood, Wood, Porta Aurea, Puffo Golosone…): possibile insegna chiusa o rinominata.
+- **indirizzi mancanti**: `the-grill`, `shibumi`, `forno-santa-caterina`.
+- **categoria da confermare**: `A.R. Food & Consulting` escluso (catering),
+  `Du'Lè`, `Popof`, `W & C`, `Lama`, `Mare e Sapori`, `Ziccardi` esclusi come
+  rosticcerie/laboratori senza somministrazione — da rivalutare se aprono al pubblico.
+
+## 7. Prossimi passi
 
 1. Parse JSON-LD delle pagine PagineBianche già scaricate (ristorante 1-3, trattoria
    1-2, osteria 1-3, pub 1-4) + scaricare `pizzeria`, `paninoteca`, `panificio`,

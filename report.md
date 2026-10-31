@@ -7,14 +7,21 @@ Aggiornato: 2026-10-31 (solo impianto, nessun dato raccolto)
 | Fase | Stato | Note |
 |---|---|---|
 | 0 — Schema e perimetro | ✅ completata | decisioni in `PLAN.md` |
-| 1 — Universo dei locali | ⬜ da fare | |
+| 1 — Universo dei locali | ✅ completata | 128 righe in `locali.csv` (vedi nota sotto) |
 | 2 — Discovery fonti menu | ⬜ da fare | |
 | 3 — Classificazione e scouting | ⬜ da fare | |
 | 4 — Report | ⬜ da fare | |
 
 ## Copertura per categoria
 
-_(da compilare in Fase 4)_
+Nota Fase 1: il piano stimava 60-70 locali, il censimento ne ha prodotti **128**.
+Il motivo è PagineBianche: la categoria "Ristoranti a Altamura" dichiara oltre 200
+risultati e molti esercizi hanno più punti vendita o più insegne. Non sono state
+incluse le attività senza somministrazione (bar puri, caffetterie, pasticcerie,
+panifici senza consumo sul posto, caseifici, enoteche). La scrematura dei locali
+chiusi va fatta in Fase 2, verificando i menu.
+
+_(numeri definitivi in Fase 4)_
 
 | Categoria | Locali | Con menu online | Senza menu |
 |---|---|---|---|
