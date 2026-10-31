@@ -9,8 +9,18 @@ in modo automatico. Il valore non è l'elenco in sé, ma la mappa delle fonti e 
 
 ## Stato
 
-Fase 0 completata (schema e perimetro definiti). Le fasi 1-4 sono descritte in `PLAN.md`
-e non sono ancora state eseguite: `data/` contiene solo le intestazioni.
+Fase 1 chiusa (128 locali). Fase 2-3 avviate: 81 fonti censite, 17 locali con prezzi
+estratti (1.187 righe in `data/piatti.csv`). Dettaglio e gap in `report.md`.
+
+Aggiornamento automatico (cron): check giornaliero dell'hash dei menu + ri-scrape
+settimanale. Comandi manuali:
+
+```bash
+python3 scripts/panem.py discover   # cerca i siti propri mancanti
+python3 scripts/panem.py scrape     # scarica fonti, estrae menu e prezzi
+python3 scripts/panem.py refresh    # ricontrolla le fonti note (cambi -> changelog)
+python3 scripts/panem.py status     # copertura
+```
 
 ## Struttura
 
@@ -20,8 +30,15 @@ panem/
 ├── PLAN.md              # piano a fasi, schema dati, criteri di classificazione
 ├── data/
 │   ├── locali.csv       # 1 riga per esercizio (universo deduplicato)
-│   └── fonti-menu.csv   # 1 riga per fonte menu (un locale può averne più)
-├── raw/                 # snapshot HTML/PDF consultati, per ri-verifiche
+│   ├── fonti-menu.csv   # 1 riga per fonte menu (un locale può averne più)
+│   ├── piatti.csv       # 1 riga per piatto+prezzo estratto
+│   ├── monitoraggio.csv # hash/HTTP per il change detection
+│   └── changelog.csv    # fonti cambiate rilevate dal refresh
+├── scripts/
+│   ├── panem.py             # discover / scrape / refresh / status
+│   ├── harvest_paginegialle.py  # discovery siti da PagineGialle
+│   └── refresh.sh           # wrapper cron (check | full)
+├── raw/                 # snapshot HTML/PDF consultati (gitignored)
 └── report.md            # sintesi: copertura, classi, gap, note tecniche
 ```
 
@@ -34,7 +51,7 @@ opencode
 ```
 
 L'agente legge `AGENTS.md` (contesto operativo) e `PLAN.md` (cosa fare). Il primo comando
-utile è "esegui la Fase 1".
+utile è "esegui la Fase 2".
 
 ## Principi
 

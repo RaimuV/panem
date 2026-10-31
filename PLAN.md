@@ -12,7 +12,8 @@ fattibilità di un aggregatore di menu. Risultato: `data/locali.csv`,
 
 - **Perimetro fonti**: si includono anche i locali il cui menu esiste solo su
   piattaforme di terzi (Just Eat, Glovo, TheFork), ma sempre **etichettati** come tali.
-- **Profondità**: catalogo fonti + struttura. **Non** si estraggono i singoli piatti.
+- **Profondità**: catalogo fonti + struttura + (dal 2026-10-31) estrazione dei piatti
+  e dei prezzi dove la fonte lo consente. Aggiornamento periodico con change detection.
 - **Output**: CSV per la revisione + `report.md` per la lettura. Niente JSON, niente DB.
 
 ## Schema `data/locali.csv`
@@ -45,6 +46,25 @@ fattibilità di un aggregatore di menu. Risultato: `data/locali.csv`,
 | `accessibilita_tecnica` | come si legge la fonte | `statico` \| `js` \| `api` \| `bloccato` |
 | `note` | dettagli (CMS, JSON-LD, anomalie) | testo |
 | `ultima_verifica` | data ultimo controllo | `YYYY-MM-DD` |
+
+## Schema `data/piatti.csv` (estensione 2026-10-31)
+
+| Campo | Descrizione |
+|---|---|
+| `locale_id` | FK verso `locali.csv` |
+| `fonte_url` | URL della fonte da cui è stato estratto |
+| `sezione` | sezione del menu (antipasti, pizze, ...) |
+| `piatto` | nome del piatto |
+| `prezzo` | prezzo in euro, formato `0.00` |
+| `valuta` | `EUR` |
+| `ultima_verifica` | `YYYY-MM-DD` |
+
+## Schema `data/monitoraggio.csv` (change detection)
+
+`url`, `http_status`, `content_hash`, `bytes`, `ultima_verifica`, `ultima_modifica`,
+`note`. L'hash è calcolato sui piatti+prezzi estratti (o sul testo se il menu non c'è),
+così le modifiche dinamiche della pagina non generano falsi positivi. I cambi finiscono
+in `data/changelog.csv` (`data`, `url`).
 
 ### Classi di estraibilità
 
@@ -92,6 +112,9 @@ Questa fase produce l'informazione più utile per l'aggregatore: **quanti menu s
 recuperabili in automatico** e con quale tecnica.
 
 ### Fase 4 — Report
+
+> Stato al 2026-10-31: Fase 1 chiusa, Fase 2-3 parziali, pipeline di aggiornamento attiva
+> (cron giornaliero + settimanale). Numeri e gap in `report.md`.
 
 `report.md` con:
 

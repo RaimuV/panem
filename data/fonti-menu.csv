@@ -1,1 +1,82 @@
 locale_id,url,tipo_fonte,classe,prezzi,allergeni,categorie_menu,accessibilita_tecnica,note,ultima_verifica
+panificio-del-lago,https://panificiodellago.it/,sito-proprio,A,si,no,Pane di semola rimacinato alto;Pane ai semi di lino;Cartellate;Pandoro artigianale;Panettone artigianale;Panettone artigianale al cioccolato;Panettone glassato;Cesto natalizio 3;Cesto natalizio 2;Cest,statico,menu in home,2026-10-31
+degu-ham,https://www.deguham.com/menudeguham.pdf,pdf,B,si,no,Costo del domicilio;Fritture;Classic burger;Cheese burger;Bbq burger;Bufala burger;Egg burger;Hot burger;Veg burger;Chicken burger;Crispy burger;Baby bo x degù;Manzo al piatto;Bun nutella,statico,,2026-10-31
+diplomatico-club,https://www.menudiplomaticoclub.it/,sito-proprio,A,si,no,"5,50 €;Titolo sintetico",statico,,2026-10-31
+kebabberia-group,https://www.kebabberiagroup.com/menu,sito-proprio,A,si,si,Pita kebab piccola;Pita kebab media;Pita kebab grande;Panino kebab;Panino kebab maxi;Pita greca;Crispy chicken wrap;Chicken burger;Chicken nuggets · 6 pezzi;Alette di pollo;Piatto kebab classico;Piatt,statico,,2026-10-31
+kebabberia-group,https://www.kebabberiagroup.com/menu/i-nostri-kebab/pita-media,sito-proprio,A,parziale,si,Pita kebab media,statico,,2026-10-31
+kebabberia-group,https://www.kebabberiagroup.com/menu/piatti-box-kebab/piatto-kebab-grande,sito-proprio,A,parziale,si,Piatto kebab grande,statico,,2026-10-31
+kebabberia-group,https://www.kebabberiagroup.com/menu/i-nostri-kebab/panino-maxi-kebab,sito-proprio,A,parziale,si,Panino kebab maxi,statico,,2026-10-31
+sponzami,https://sponzami.com/,sito-proprio,A,si,si,"Stuzzicherie;Straccetti bbq glazed;Polpo & mare;Sole e sapore;Tacchino ranch;Chicken glazed;Insalate ""sgarro"";Scottona bbq pugliese;Pink chicken;Golden crispy;The big turkey;L'orto grigliato;Porko exp",statico,menu in home,2026-10-31
+il-panzerotto-re-umberto,http://panzerottoreumberto1.it/,sito-proprio,D,no,no,,bloccato,HTTP 0,2026-10-31
+panzerotteria-panze,https://panzealtamura.it,sito-proprio,D,no,no,,bloccato,HTTP 403,2026-10-31
+dodo-sapori-di-pizza,https://dodosaporidipizza.it/menu/,sito-proprio,A,si,no,Patatine fritte;Pettoline;Straccetti di pollo;Mortadella arrosto;Involtini speck e mozzarella;Mimmo;Gola;Autunno;Mimosa;Medievale;Chicca;Crema di zucca;Delicata;Francesco;Funghetta;Messicana;Summer;Sf,statico,,2026-10-31
+dodo-sapori-di-pizza,https://dodosaporidipizza.it/wp-content/uploads/2026/06/menu-delivery-dodo-2025-11.pdf,pdf,B,si,no,Pizza baby;Bruschetta salmone;Carpaccio di black angus affumicato;Mortadella;Stracciatella e speck;Vegetariana;Zucca e angus;Bomboniere,statico,,2026-10-31
+dodo-sapori-di-pizza,https://dodosaporidipizza.it/wp-content/uploads/2026/06/menu-posti-a-sedere-dodo-2025-12.pdf,pdf,B,si,no,Riso soffiato;Involtini di speck e mozzarella;Tagliere di salumi;Caraccio di black angus affumicato;Bruschetta salmone;Ira;Quattro formaggi;Strong ale;Vellutata;Emiliana;Zucchine e pancetta;Porchetta ,statico,,2026-10-31
+dodo-sapori-di-pizza,https://dodosaporidipizza.it/wp-content/uploads/2026/01/menu-delivery-dodo-2025-11.pdf,pdf,B,si,no,Bruschetta salmone;Carpaccio di black angus affumicato;Vegetariana,statico,,2026-10-31
+pizzeria-miura,https://miurapizzalab.it/Miura-digital.pdf,pdf,B,si,no,"Impasto alternativo;Soft drinks;Disponibile anche nelle versioni;Bevande;Warsteiner premium pils;Birra viola;Theresianer premium beer;Norbertus weisse;Carpaccio di black angus;Rosso, olio evo;Taglieri",statico,,2026-10-31
+pizzeria-new-bietigheim,https://www.bietigheimpizzeria.com/menu-copy,sito-proprio,A,si,no,Vino;Frittura;Specialita;Stuzzicheria;Puoi aggiungere;Solo per i piu piccoli;Hamburger;Insalate;Primi piatti (solo a pranzo);Dolci;Amari,statico,,2026-10-31
+pizza-e-core,https://pizza-e-core-pizzeria-napoletana.it/,sito-proprio,A,si,no,Pizza & core pizzeria napoletana - pizza;Recensioni;Antipasti;Pizze;Pizze speciali;Calzoni;Hamburger;Secondi;Insalate;Dolci;Bevande;Birre;Vini,statico,menu in home,2026-10-31
+pizzeria-ciccio-e-ciabatta,https://www.pizzeriaciccioeciabatta.it,sito-proprio,D,no,no,,bloccato,HTTP 0,2026-10-31
+pizzeria-il-pizzico,https://www.pizzeriailpizzico.it,sito-proprio,D,no,no,,bloccato,HTTP 0,2026-10-31
+pizzeria-levante,https://www.pizzerialevante.it/menu-saletta/,sito-proprio,A,si,no,Olive;Riso soffiato;Anacardi;Patatine barchetta;Patatine cacio e pepe;Pettoline e salsine;Salumi e baci;Tagli pregiati;Fagotti gustosi;Bomba fiorita;Cubetti glassati;Bruschette;Pizzette fritte;Altura;,statico,,2026-10-31
+pizzeria-levante,https://www.pizzerialevante.it/menu-asporto/,sito-proprio,A,si,no,Würstel;Porchetta e patatine;Parma;Cotto e funghi;Quattro stagioni;Capricciosa;Tropea;Mille gusti;Boscaiola;Genovese;Affumicata;Quattro formaggi;Vegetariana;Stracciatella e parma;Stracciatella e radic,statico,,2026-10-31
+pizzeria-levante,https://www.pizzerialevante.it/pizzeria-levante-altamura-menu.pdf,pdf,B,si,no,Piz za ever yth ing;Starter s;Brusch ette;Fri ed;Frittatina di pasta;Contemporar y p izza;Parmigiana di melanzane;Casa di mamma;Napoli;Diavola;Quattro stagioni;Würstel e patatine;Vegetariana;Legendary,statico,,2026-10-31
+pizzeria-levante,https://www.pizzerialevante.it/pizzeria-levante-altamura-menu-asporto-domicilio.pdf,pdf,B,parziale,no,Patatine barchetta;Delivery,statico,,2026-10-31
+pizzeria-levante-martiri,https://www.pizzerialevante.it/menu-saletta/,sito-proprio,A,si,no,Olive;Riso soffiato;Anacardi;Patatine barchetta;Patatine cacio e pepe;Pettoline e salsine;Salumi e baci;Tagli pregiati;Fagotti gustosi;Bomba fiorita;Cubetti glassati;Bruschette;Pizzette fritte;Altura;,statico,,2026-10-31
+pizzeria-levante-martiri,https://www.pizzerialevante.it/menu-asporto/,sito-proprio,A,si,no,Würstel;Porchetta e patatine;Parma;Cotto e funghi;Quattro stagioni;Capricciosa;Tropea;Mille gusti;Boscaiola;Genovese;Affumicata;Quattro formaggi;Vegetariana;Stracciatella e parma;Stracciatella e radic,statico,,2026-10-31
+pizzeria-levante-martiri,https://www.pizzerialevante.it/pizzeria-levante-altamura-menu.pdf,pdf,B,si,no,Piz za ever yth ing;Starter s;Brusch ette;Fri ed;Frittatina di pasta;Contemporar y p izza;Parmigiana di melanzane;Casa di mamma;Napoli;Diavola;Quattro stagioni;Würstel e patatine;Vegetariana;Legendary,statico,,2026-10-31
+pizzeria-levante-martiri,https://www.pizzerialevante.it/pizzeria-levante-altamura-menu-asporto-domicilio.pdf,pdf,B,parziale,no,Patatine barchetta;Delivery,statico,,2026-10-31
+pizzeria-rosticceria-bietigheim,https://www.bietigheimpizzeria.com/menu-copy,sito-proprio,A,si,no,Vino;Frittura;Specialita;Stuzzicheria;Puoi aggiungere;Solo per i piu piccoli;Hamburger;Insalate;Primi piatti (solo a pranzo);Dolci;Amari,statico,,2026-10-31
+pizzeria-soel,https://www.pizzeriasoel.it/,sito-proprio,C,no,no,,statico,nessun menu con prezzi estraibile dalla home,2026-10-31
+pizzeria-porta-aurea,https://portaaurea.it/wp-content/uploads/2026/02/Menu.pdf,pdf,B,si,no,Antipastiantipasti;Primiprimi;Pescepesce;Bracebrace;Insalateinsalate;Contornicontorni;Pizze estate;Pizze rosse;Pizze bianche;Frutta & dessertfrutta & dessert;Bevandebevande;Birre in bottiglia;Birre ar,statico,,2026-10-31
+pizzeria-volosa,http://www.volosa.it,sito-proprio,C,no,no,,statico,nessun menu con prezzi estraibile dalla home,2026-10-31
+pizzeria-wood,https://woodaltamura.it/,sito-proprio,C,no,no,,statico,nessun menu con prezzi estraibile dalla home,2026-10-31
+black-pepper,https://www.alteregoaltamura.it,sito-proprio,C,no,no,,statico,nessun menu con prezzi estraibile dalla home,2026-10-31
+del-corso,https://ristorantedelcorso.it/menu.pdf,pdf,B,si,no,,statico,,2026-10-31
+devo,https://www.devoristorante.com,sito-proprio,C,no,no,,statico,nessun menu con prezzi estraibile dalla home,2026-10-31
+gusto-d-altura,https://gustodaltura.com/wp-content/uploads/2026/10/menu-autunno.pdf,pdf,B,si,no,Menù d’autunno,statico,,2026-10-31
+hostari,https://www.hostari.it/menu.pdf,pdf,B,si,no,Attenzione;Birre;Antipasti dell’hostàrì;Primi;Panini gourmet;Carne alla brace;Olive nere soffritte***;Funghi trifolati***;Diplomatico riserva;Gagliano antico castello affinita;Jefferson;Vini rossi;Vin,statico,,2026-10-31
+kyklos,https://web.kyklosaltamura.it,sito-proprio,C,no,no,,statico,nessun menu con prezzi estraibile dalla home,2026-10-31
+locanda-san-nicola,https://locandasannicola.it,sito-proprio,D,no,no,,bloccato,HTTP 0,2026-10-31
+meatico,http://www.meaticoaltamura.com,sito-proprio,D,no,no,,bloccato,HTTP 0,2026-10-31
+mo-e-osteria,https://www.osteriamoe.com/,sito-proprio,C,no,no,,statico,nessun menu con prezzi estraibile dalla home,2026-10-31
+otto,https://ottoristorantedicarne.it,sito-proprio,C,no,no,,statico,nessun menu con prezzi estraibile dalla home,2026-10-31
+papilla,http://www.papillafoodanddrink.it,sito-proprio,D,no,no,,statico,nessun menu con prezzi estraibile dalla home,2026-10-31
+biancospino,https://www.grupposimone.it/wp-content/uploads/2023/02/Gruppo-Simone_Codice-etico.pdf,pdf,B,si,no,Codice etic;Ocse;Centralità della persona;Interesse;Esaustivo;Organismo di vigilanza,statico,,2026-10-31
+romana-bistrot,https://romanabistrotaltamura.it/,sito-proprio,D,no,no,,statico,nessun menu con prezzi estraibile dalla home,2026-10-31
+shodai,https://www.shodai.it/altamura,sito-proprio,D,no,no,,bloccato,HTTP 0,2026-10-31
+stile-libero,https://stileliberoaltamura.it/,sito-proprio,C,no,si,,statico,nessun menu con prezzi estraibile dalla home,2026-10-31
+trattoria-cenzino,http://www.rosticceriacenzino.it,sito-proprio,C,no,no,,statico,nessun menu con prezzi estraibile dalla home,2026-10-31
+tre-archi,https://www.trearchi.it,sito-proprio,D,no,no,,bloccato,HTTP 429,2026-10-31
+villa-di-bacco,https://villadibacco.com,sito-proprio,D,no,no,,statico,nessun menu con prezzi estraibile dalla home,2026-10-31
+sale-e-pepe-take-away,https://www.justeat.it/restaurants-sale-e-pepe-take-away-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+maninpasta,https://www.justeat.it/restaurants-maninpasta-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+ham-hamburgheria,https://www.justeat.it/restaurants-ham-hamburgheria-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+sape-pizzeria-takeaway,https://www.justeat.it/restaurants-sape-pizzeria-takeaway-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+fior-di-pizza,https://www.justeat.it/restaurants-fior-di-pizza-altamura-70022/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+pizza-e-core,https://www.justeat.it/restaurants-pizza-and-core-pizzeria-napoletana-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+pizzeria-non-mi-dire,https://www.justeat.it/restaurants-pizzeria-non-mi-dire-altamura-70022/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+pizzeria-alta-pizza,https://www.justeat.it/restaurants-pizzeria-alta-pizza-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+tandem-food,https://www.justeat.it/restaurants-tandem-food-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+arte-pizza,https://www.justeat.it/restaurants-arte-pizza-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+degu-ham,https://www.justeat.it/restaurants-degu-ham-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+nagoya,https://www.justeat.it/restaurants-nagoya-ristorante-fusion-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+kebabberia-group,https://www.justeat.it/restaurants-kebabberia-group-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+umami-pizzeria,https://www.justeat.it/restaurants-umami-pizzeria-altamura-70022/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+piada-la-piadineria-artigianale,https://www.justeat.it/restaurants-piada-la-piadineria-artigianale-70022/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+birbacco,https://www.justeat.it/restaurants-birbacco-pizzeria-hamburgeria-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+miura-pizza-lab,https://www.justeat.it/restaurants-miura-pizza-lab-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+sponzami,https://www.justeat.it/restaurants-sponzami-altamura-70022/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+the-grill,https://www.justeat.it/restaurants-the-grill---specialita-carne-and-panini-70022/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+shibumi,https://www.justeat.it/restaurants-shibumi-altamura---fusion-restaurant-70022/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+salumeria-boccon-di-vino,https://www.justeat.it/restaurants-salumeria-boccon-di-vino-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+bistrot-del-borgo,https://www.justeat.it/restaurants-bistrot-del-borgo-altamura/menu,just-eat,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+fior-di-pizza,https://www.thefork.it/ristorante/fior-di-pizza-r813416,thefork,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+pamaro,https://www.thefork.it/ristorante/pamaro-r869167,thefork,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+mo-e-osteria,https://www.thefork.it/ristorante/osteria-mo-e-r552311,thefork,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+dodo-sapori-di-pizza,https://www.thefork.it/ristorante/dodo-sapori-di-pizza-r858495,thefork,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+gusto-d-altura,https://www.thefork.it/ristorante/gusto-d-altura-r860158,thefork,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+la-locanda-di-alice,https://www.thefork.it/ristorante/la-locanda-di-alice-r850654,thefork,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+mercadante-pizza-e-cucina,https://www.thefork.it/ristorante/mercadante-pizza-e-cucina-r705459,thefork,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+hostari,https://www.thefork.it/ristorante/hostari-osteria-moderna-r810023,thefork,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31
+villa-di-bacco,https://www.thefork.it/ristorante/villa-di-bacco-r500397,thefork,D,no,no,,bloccato,HTTP 403; menu non estraibile senza browser,2026-10-31

@@ -55,6 +55,20 @@ Vedi `PLAN.md`. Riassunto:
 
 Non saltare la Fase 1: senza universo completo, il report è inutile.
 
+## Pipeline dati (dal 2026-10-31)
+
+- `python3 scripts/panem.py discover` — cerca i siti propri (varianti dominio + seed +
+  PagineGialle via `scripts/harvest_paginegialle.py`).
+- `python3 scripts/panem.py scrape` — scarica home/menu/PDF, estrae piatti e prezzi in
+  `data/piatti.csv`, aggiorna `fonti-menu.csv` e `monitoraggio.csv`.
+- `python3 scripts/panem.py refresh` — ricontrolla le fonti note; se l'hash dei
+  piatti+prezzi cambia, scrive in `data/changelog.csv`.
+- `scripts/refresh.sh check|full` — wrapper per cron (lock in `/tmp/panem.lock`).
+
+Regole: 1 richiesta/secondo per dominio, robots.txt rispettato, snapshot in `raw/`.
+Just Eat / TheFork / Glovo sono bloccate (Cloudflare/403): si catalogano, non si scrapano.
+Non inventare prezzi: se il parser non estrae nulla, la fonte resta `prezzi=no`.
+
 ## Cosa NON fare
 
 - Non creare applicazioni, frontend o database: questo progetto produce **dati e un

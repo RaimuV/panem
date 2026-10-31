@@ -1,85 +1,102 @@
 # Report — panem
 
-Aggiornato: 2026-10-31 (solo impianto, nessun dato raccolto)
+Aggiornato: 2026-10-31 (Fase 1 chiusa; Fase 2-3 avviate con pipeline automatica)
 
 ## Avanzamento
 
 | Fase | Stato | Note |
 |---|---|---|
 | 0 — Schema e perimetro | ✅ completata | decisioni in `PLAN.md` |
-| 1 — Universo dei locali | ✅ completata | 128 righe in `locali.csv` (vedi nota sotto) |
-| 2 — Discovery fonti menu | ⬜ da fare | |
-| 3 — Classificazione e scouting | ⬜ da fare | |
-| 4 — Report | ⬜ da fare | |
+| 1 — Universo dei locali | ✅ completata | 128 righe in `locali.csv` |
+| 2 — Discovery fonti menu | 🟡 parziale | 81 fonti censite su 128 locali |
+| 3 — Classificazione e scouting | 🟡 parziale | classi A/B/C/D assegnate, prezzi estratti dove possibile |
+| 4 — Report | 🟡 prima stesura | questo file |
 
-## Copertura per categoria
+Pipeline riproducibile: `scripts/panem.py` (`discover`, `scrape`, `refresh`, `status`)
++ `scripts/harvest_paginegialle.py`. Aggiornamento automatico via cron (vedi in fondo).
 
-Nota Fase 1: il piano stimava 60-70 locali, il censimento ne ha prodotti **128**.
-Il motivo è PagineBianche: la categoria "Ristoranti a Altamura" dichiara oltre 200
-risultati e molti esercizi hanno più punti vendita o più insegne. Non sono state
-incluse le attività senza somministrazione (bar puri, caffetterie, pasticcerie,
-panifici senza consumo sul posto, caseifici, enoteche). La scrematura dei locali
-chiusi va fatta in Fase 2, verificando i menu.
+## Copertura
 
-_(numeri definitivi in Fase 4)_
+| Metrica | Valore |
+|---|---|
+| Locali censiti | 128 |
+| Locali con sito proprio trovato | 38 |
+| Locali con almeno una fonte menu | 59 |
+| Locali con prezzi estratti | 17 |
+| Fonti censite | 81 (36 sito proprio, 14 PDF, 22 Just Eat, 9 TheFork) |
+| Piatti/prezzi estratti | 1.187 |
 
-| Categoria | Locali | Con menu online | Senza menu |
-|---|---|---|---|
-| Pizzerie | | | |
-| Paninoteche | | | |
-| Ristoranti | | | |
-| Altro | | | |
-| **Totale** | | | |
+Per categoria (locali con almeno una fonte): ristoranti 23, pizzerie 21,
+paninoteche 5, hamburgherie 2, panzerotterie 2, forni 1.
 
 ## Distribuzione classi di estraibilità
 
 | Classe | Significato | Fonti |
 |---|---|---|
-| A | HTML strutturato | |
-| B | PDF testuale | |
-| C | immagine / social | |
-| D | solo piattaforma | |
+| A | HTML strutturato, prezzi nel DOM | 15 |
+| B | PDF testuale | 14 |
+| C | immagine / social / menu dietro JS | 10 |
+| D | solo piattaforma o fonte bloccata | 42 |
 
-## Gap — locali senza menu online
+## Dati estratti (locali con prezzi)
 
-_(i candidati più interessanti per l'aggregatore: nessuna fonte, quindi nessuna
-concorrenza. Da contattare per primi.)_
+| Locale | Piatti | Prezzo min | Mediana | Max |
+|---|---|---|---|---|
+| Pizzeria Levante (+ sede Martiri) | 180 | 1,00 | 7,50 | 45,00 |
+| Porta Aurea | 152 | 3,00 | 11,00 | 55,00 |
+| DODO Sapori di Pizza | 140 | 1,00 | 7,50 | 18,00 |
+| Pizza & Core | 90 | 1,00 | 7,75 | 40,00 |
+| Hostàrì | 68 | 1,50 | 20,00 | 120,00 |
+| Sponzami | 65 | 1,50 | 10,00 | 19,00 |
+| Miura Pizza Lab | 61 | 1,00 | 10,00 | 13,00 |
+| New Bietigheim / Bietigheim | 57 | 3,50 | 10,00 | 15,00 |
+| Gusto d'Altura | 27 | 3,00 | 20,00 | 40,00 |
+| Kebabberia Group | 26 | 3,00 | 5,25 | 7,90 |
+| Degù Ham | 23 | 1,50 | 7,00 | 13,00 |
+| Del Corso | 18 | 4,00 | 7,50 | 70,00 |
+| Ristorante Biancospino | 18 | 2,00 | 10,50 | 81,00 |
+| Diplomatico Club | 13 | 2,00 | 6,00 | 14,00 |
+| Panificio del Lago | 12 | 2,40 | 29,00 | 80,00 |
 
--
+I dati piatto-per-piatto sono in `data/piatti.csv` (locale, fonte, sezione, piatto,
+prezzo, data di verifica).
+
+## Gap — locali senza alcuna fonte censita
+
+69 locali su 128. Sono i candidati commerciali dell'aggregatore (nessuna fonte nota,
+quindi nessuna concorrenza diretta sul menu online). La maggior parte sono ristoranti
+e pizzerie senza sito proprio e presenti solo su directory.
 
 ## Anomalie
 
-_(siti morti, menu fermi a più stagioni fa, PDF scansionati illeggibili, locali chiusi
-ma ancora online)_
-
--
+- **Siti morti / irraggiungibili**: `panzerottoreumberto1.it`, `pizzeriaciccioeciabatta.it`,
+  `pizzeriailpizzico.it`, `locandasannicola.it`, `meaticoaltamura.com`, `shodai.it`.
+- **Siti "in manutenzione"**: `villadibacco.com`, `trearchi.it`.
+- **Menu dietro splash/JS** (nessun prezzo nel DOM statico): `romanabistrotaltamura.it`,
+  `stileliberoaltamura.it` (menu su `/menu/?menuSlug=...`), `osteriamoe.com`, `kyklos`.
+- **Piattaforme bloccate**: Just Eat (Cloudflare 403, anche con browser), TheFork (403),
+  Glovo. Non sono estraibili in automatico senza accordo o browser autenticato.
+- **Motori di ricerca inutilizzabili** da questo IP: Bing/Google/DuckDuckGo restituiscono
+  risultati spazzatura o captcha. Discovery basata su PagineGialle + varianti di dominio.
 
 ## Raccomandazioni tecniche
 
-_(quali fonti sono parsabili in automatico, quali richiedono accordi diretti, quale
-strategia di aggiornamento regge nel tempo)_
+1. **Parsare siti propri + PDF funziona** (29 fonti su 81 con prezzi in chiaro). Costo
+   marginale di aggiornamento quasi nullo: è la base solida del catalogo.
+2. **Le piattaforme di terzi vanno trattate come catalogo, non come fonte prezzi**:
+   link e presenza sì, menu no (bloccate e comunque non ripubblicabili).
+3. **Aggiornamento**: check giornaliero dell'hash dei menu (`refresh.sh check`, ~45 s) e
+   ri-scrape completo settimanale (`refresh.sh full`, ~3 min). I cambi finiscono in
+   `data/changelog.csv`; `ultima_verifica` e `ultima_modifica` sono per fonte.
+4. **Prossimi passi utili**: (a) passare il browser sulle 10 fonti classe C per capire
+   se il menu è recuperabile; (b) trovare i siti mancanti dei 69 locali scoperti;
+   (c) decidere il perimetro prodotto (solo Altamura? menu+prezzi? ordinabilità?).
 
--
+## Aggiornamento automatico
 
-## Locali verificati (campione iniziale dal recon del 2026-10-31)
+```
+17 3 * * *   /home/xenoserver/PROJECTS/panem/scripts/refresh.sh check   # hash/HTTP
+40 3 * * 1   /home/xenoserver/PROJECTS/panem/scripts/refresh.sh full    # ri-estrazione
+```
 
-Trovati durante la ricognizione preliminare, **da confermare e completare in Fase 2**:
-
-| Locale | Fonte individuata | Note |
-|---|---|---|
-| Pizzeria Levante (Francesco Pellegrino) | `pizzerialevante.it` | HTML + PDF saletta/asporto, allergeni presenti |
-| Degù Ham | `deguham.com` | PDF menu + ordine su Booxit |
-| Pancaffè (Laudati) | `pancaffe.com` | menu in pagina, nessun PDF |
-| Pizza & Core Pizzeria Napoletana | microsito `pizza-e-core-pizzeria-napoletana.it` | redirect a Just Eat |
-| Panzè | microsito `panze-altamura.it` | redirect a Just Eat |
-| Sale e Pepe Take Away | Just Eat | menu ampio, prezzi in chiaro |
-| Arte Pizza | Just Eat | da verificare sito proprio |
-| iBirrattieri | Just Eat | da verificare sito proprio |
-| Ham. Hamburgheria | Just Eat | da verificare sito proprio |
-| Maninpasta | Just Eat | da verificare sito proprio |
-| Fior di Pizza | TheFork (rating 9.2) | menu da verificare |
-| Mercadante Pizza e Cucina | TheFork | menu da verificare |
-| Mo è Osteria | PagineGialle | menu da verificare |
-| Pizzeria Vecchio Ponte | PagineGialle | menu da verificare |
-| Birbacco | TheFork | menu da verificare |
-| Villa di Bacco | TheFork | menu da verificare |
+Log: `raw/refresh.log` (gitignored). Lock: `/tmp/panem.lock`.
