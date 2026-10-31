@@ -1,0 +1,16 @@
+# snapshot e cache locali
+raw/*
+!raw/.gitkeep
+
+# PDF e HTML scaricati temporaneamente
+*.tmp
+*.log
+
+# ambienti
+.venv/
+__pycache__/
+node_modules/
+
+# sistema
+.DS_Store
+Thumbs.db
