@@ -6,6 +6,7 @@ Uso:
   python3 scripts/panem.py scrape     # scarica fonti e estrae menu/prezzi
   python3 scripts/panem.py refresh    # ricontrolla le fonti note, aggiorna hash/date
   python3 scripts/panem.py status     # riepilogo copertura
+  python3 scripts/panem.py check      # validazione integrità dei CSV (exit 1 se rotta)
 
 Scrive:
   data/locali.csv            (colonna sito aggiornata dal discover)
@@ -677,6 +678,91 @@ def cmd_status():
     print(f"locali con prezzi: {len(withp)}")
 
 
+# ---------------------------------------------------------------- check
+CATEGORIE = {"pizzeria", "paninoteca", "ristorante", "panzerotteria", "hamburgheria",
+             "forno-caffetteria", "altro"}
+CLASSI = {"A", "B", "C", "D"}
+TERZINI = {"si", "no", "parziale"}
+
+
+def cmd_check():
+    """Valida i CSV: FK, id duplicati, contatori, campi fuori schema. Exit 1 se qualcosa non torna."""
+    locali = read_csv("locali.csv")
+    fonti = read_csv("fonti-menu.csv")
+    piatti = read_csv("piatti.csv")
+    problemi = []
+
+    # id duplicati
+    ids = [r["id"] for r in locali]
+    for i in {x for x in ids if ids.count(x) > 1}:
+        problemi.append(f"locali.csv: id duplicato '{i}'")
+
+    # FK
+    noti = set(ids)
+    for r in fonti:
+        if r["locale_id"] not in noti:
+            problemi.append(f"fonti-menu.csv: locale_id inesistente '{r['locale_id']}'")
+    for p in {r["locale_id"] for r in piatti}:
+        if p not in noti:
+            problemi.append(f"piatti.csv: locale_id inesistente '{p}'")
+
+    # fonti duplicate sulla stessa coppia locale+url
+    viste = set()
+    for r in fonti:
+        k = (r["locale_id"], r["url"].strip().rstrip("/"))
+        if k in viste:
+            problemi.append(f"fonti-menu.csv: fonte duplicata {k[0]} -> {k[1]}")
+        viste.add(k)
+
+    # contatori e ha_menu_online allineati alle fonti reali
+    conteggio = {}
+    for r in fonti:
+        conteggio[r["locale_id"]] = conteggio.get(r["locale_id"], 0) + 1
+    for r in locali:
+        reale = conteggio.get(r["id"], 0)
+        atteso = "si" if reale else "no"
+        if r["ha_menu_online"] != atteso:
+            problemi.append(
+                f"locali.csv: {r['id']} ha_menu_online='{r['ha_menu_online']}' ma fonti={reale}")
+        if r["n_fonti"] != str(reale):
+            problemi.append(f"locali.csv: {r['id']} n_fonti='{r['n_fonti']}' ma fonti={reale}")
+
+    # campi fuori schema
+    for r in locali:
+        if r["categoria"] not in CATEGORIE:
+            problemi.append(f"locali.csv: {r['id']} categoria '{r['categoria']}' non valida")
+    for r in fonti:
+        if r["classe"] not in CLASSI:
+            problemi.append(f"fonti-menu.csv: {r['url']} classe '{r['classe']}' non valida")
+        for campo in ("prezzi", "allergeni"):
+            if r[campo] not in TERZINI:
+                problemi.append(f"fonti-menu.csv: {r['url']} {campo}='{r[campo]}' non valido")
+
+    # possibili doppioni di locale (stesso nome normalizzato + stesso indirizzo)
+    def norm(s):
+        s = unicodedata.normalize("NFKD", s.lower())
+        s = "".join(c for c in s if not unicodedata.combining(c))
+        return re.sub(r"[^a-z0-9]+", " ", s).strip()
+
+    chiavi = {}
+    for r in locali:
+        if not r["indirizzo"].strip():
+            continue
+        k = (norm(r["nome"]), norm(r["indirizzo"]))
+        if k in chiavi:
+            problemi.append(f"locali.csv: possibile doppione '{chiavi[k]}' / '{r['id']}'")
+        chiavi[k] = r["id"]
+
+    if problemi:
+        print(f"[check] {len(problemi)} problemi:")
+        for p in problemi:
+            print("  -", p)
+        sys.exit(1)
+    print(f"[check] ok — {len(locali)} locali, {len(fonti)} fonti, {len(piatti)} piatti, "
+          "FK e contatori coerenti")
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "status"
-    {"discover": cmd_discover, "scrape": cmd_scrape, "refresh": cmd_refresh, "status": cmd_status}[cmd]()
+    {"discover": cmd_discover, "scrape": cmd_scrape, "refresh": cmd_refresh,
+     "status": cmd_status, "check": cmd_check}[cmd]()
